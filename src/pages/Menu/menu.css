@@ -1,0 +1,17 @@
+.menu-list {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.582);
+  padding-bottom: 20px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.582);
+}
+.active {
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.76);
+}
