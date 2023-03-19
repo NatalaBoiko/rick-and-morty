@@ -5,7 +5,7 @@ import Filter from "../../components/Filter/Filter";
 
 import { fetchCaracters } from "../../data/characters";
 
-import "./Home.css";
+// import "./Home.css";
 
 const Home = () => {
   fetchCaracters();
