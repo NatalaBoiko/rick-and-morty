@@ -1,18 +1,15 @@
-import "./caracters-list.css";
+import s from "./CaractersList.module.css";
 import PropTypes from "prop-types";
 import { sortItems } from "../../helpers/sortItems";
 
-const items = [1, 2, 3, 4];
-
 const CaractersList = ({ items }) => {
   const sortedItems = sortItems(items);
-  console.dir(items);
 
   const characters = sortedItems.map(({ id, name, image, species }) => (
-    <li key={id} className="list-item">
+    <li key={id} className={s.listItem}>
       <a href="/">
         <img src={image} alt={name} />
-        <div className="descr-wrapper">
+        <div className={s.descrWrapper}>
           <h3>{name}</h3>
           <p>{species}</p>
         </div>
@@ -20,7 +17,7 @@ const CaractersList = ({ items }) => {
     </li>
   ));
 
-  return <ul className="list">{characters}</ul>;
+  return <ul className={s.list}>{characters}</ul>;
 };
 
 CaractersList.defaultProps = {

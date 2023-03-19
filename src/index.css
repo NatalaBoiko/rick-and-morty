@@ -14,10 +14,14 @@ code {
 
 * {
   box-sizing: border-box;
+  transition-duration: 1s;
 }
 
 h1,
-ul {
+h3,
+p,
+ul,
+svg {
   padding: 0;
   margin: 0;
 }
