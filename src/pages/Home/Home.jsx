@@ -12,9 +12,24 @@ import { fetchCaracters, fetchNames } from "../../data/characters";
 import { sortItems } from "../../helpers/sortItems";
 
 const Home = () => {
-  const [filter, setFilter] = useState("");
-  const [items, setItems] = useState([]);
-  const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState(() => {
+    const saved = localStorage.getItem("filter");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
+  const [items, setItems] = useState(() => {
+    const saved = localStorage.getItem("items");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
+
+  const [page, setPage] = useState(() => {
+    const saved = localStorage.getItem("page");
+    const initialValue = JSON.parse(saved);
+    return initialValue || 1;
+  });
+
   const [next, setNext] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -56,6 +71,10 @@ const Home = () => {
     if (filter) {
       getNames(page, filter);
     } else getCharacters(page);
+
+    localStorage.setItem("filter", JSON.stringify(filter));
+    localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("page", JSON.stringify(page));
   }, [filter, page]);
 
   const handleCangeFilter = (e) => {
@@ -65,6 +84,7 @@ const Home = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     setFilter("");
+    setPage(1);
   };
 
   const loadMore = () => {
