@@ -2,7 +2,7 @@ import "./caracters-list.css";
 import PropTypes from "prop-types";
 import { sortItems } from "../../helpers/sortItems";
 
-// const items = [];
+const items = [1, 2, 3, 4];
 
 const CaractersList = ({ items }) => {
   const sortedItems = sortItems(items);

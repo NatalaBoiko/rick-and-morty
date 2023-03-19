@@ -9,11 +9,11 @@ const Menu = () => {
           Home
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink className="link" to="/list">
           List
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink className="link" to="/character">
           Character

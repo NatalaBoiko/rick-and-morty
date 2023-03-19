@@ -1,3 +1,4 @@
+import "./App.css";
 // import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 // import { Suspense, lazy } from "react";
@@ -7,7 +8,7 @@ import Menu from "./pages/Menu/Menu";
 
 import Home from "./pages/Home/Home";
 import Character from "./pages/Character/Character";
-import List from "./pages/List/List";
+// import List from "./pages/List/List";
 import NotFound from "./pages/NotFound/NotFound";
 
 // const Home = lazy(() => import("./pages/Home/Home"));
@@ -15,12 +16,11 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Menu />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/character" element={<Character />} />
-        <Route path="/list" element={<List />} />
+        <Route path="/:id" element={<Character />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
