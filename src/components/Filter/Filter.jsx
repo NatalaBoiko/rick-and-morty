@@ -1,9 +1,10 @@
 // import "./Filter.css";
+import s from "./Filter.module.css";
 
 const Filter = ({ filter, onChange, onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
-      <button type="submit" className="filter-bnt">
+      <button type="submit" className={s.filterBnt}>
         <svg
           width="18"
           height="18"
@@ -23,7 +24,7 @@ const Filter = ({ filter, onChange, onSubmit }) => {
         name="filter"
         value={filter}
         onChange={onChange}
-        className="filter"
+        className={s.filter}
         type="text"
         placeholder="Filter by name..."
       />
