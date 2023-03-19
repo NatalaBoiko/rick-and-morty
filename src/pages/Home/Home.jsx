@@ -12,7 +12,6 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
       <img className="title" src={Title} alt="Title" />
       <Filter />
       {/* <CaractersList /> */}
