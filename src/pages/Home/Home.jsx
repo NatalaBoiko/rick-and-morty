@@ -23,10 +23,9 @@ const Home = () => {
       try {
         setIsLoading(true);
         const data = await fetchCaracters(page);
+        console.log(data);
         const sortedItems = sortItems(data.results);
-        // console.log(sortedItems);
         setItems([...sortedItems]);
-        // setCount(data.info.count);
         setNext(data.info.next);
         setIsLoading(false);
       } catch (error) {
@@ -40,22 +39,24 @@ const Home = () => {
       try {
         setIsLoading(true);
         const data = await fetchNames(page, filter);
+        console.log(data);
+
         const sortedItems = sortItems(data.results);
         setItems([...sortedItems]);
-        // setCount(data.info.count);
         setNext(data.info.next);
       } catch (error) {
         console.log(error);
-        alert(` ${filter.toUpperCase()} isn't exist`);
-        setFilter("");
+        alert(`${filter.toUpperCase()} isn't exist`);
+        // setFilter("");
       } finally {
         setIsLoading(false);
       }
     };
+
     if (filter) {
       getNames(page, filter);
     } else getCharacters(page);
-  }, [filter]);
+  }, [filter, page]);
 
   const handleCangeFilter = (e) => {
     setFilter(e.target.value);
@@ -64,6 +65,14 @@ const Home = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     setFilter("");
+  };
+
+  const loadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const loadLess = () => {
+    setPage((prevPage) => prevPage - 1);
   };
 
   return (
@@ -76,11 +85,10 @@ const Home = () => {
       />
       {isLoading && <p>Loading...</p>}
       <CaractersList items={items} />
+
       {page > 1 && (
         <Button
-          onClick={() => {
-            setPage((prevPage) => prevPage - 1);
-          }}
+          onClick={loadLess}
           title={page - 1}
           type="button"
           className="load-more"
@@ -89,9 +97,7 @@ const Home = () => {
 
       {next && (
         <Button
-          onClick={() => {
-            setPage((prevPage) => prevPage + 1);
-          }}
+          onClick={loadMore}
           // title="Load more"
           title={page + 1}
           type="button"
