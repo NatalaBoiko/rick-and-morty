@@ -4,9 +4,9 @@ import Title from "../../images/Title.png";
 import Filter from "../../components/Filter/Filter";
 import CaractersList from "../../components/CaractersList/CaractersList";
 import BattonsList from "../../components/BattonsList/BattonsList";
+import { infoToast, myToast } from "../../helpers/toasts";
 
 import { useState, useEffect } from "react";
-
 import { fetchCaracters, fetchNames } from "../../data/characters";
 import { sortItems } from "../../helpers/sortItems";
 
@@ -59,7 +59,8 @@ const Home = () => {
         setNext(data.info.next);
       } catch (error) {
         console.log(error);
-        alert(`${filter.toUpperCase()} isn't exist`);
+        // alert(`${filter.toUpperCase()} isn't exist`);
+        myToast(`${filter.toUpperCase()} isn't exist`);
         // setFilter("");
       } finally {
         setIsLoading(false);
