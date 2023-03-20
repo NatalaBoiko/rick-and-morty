@@ -17,6 +17,10 @@
   /* transition-duration: 1s; */
 }
 
+.listItemLink {
+  text-decoration: none;
+}
+
 .listItem:focus,
 .listItem:hover {
   transform: scale(1.05);
@@ -39,6 +43,7 @@
   line-height: 30px;
   letter-spacing: 0.15px;
   text-align: left;
+  color: black;
 }
 
 .descrWrapper p {
@@ -48,11 +53,27 @@
   line-height: 21px;
   letter-spacing: 0.25px;
   text-align: left;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 @media screen and (min-width: 768px) {
   .list {
     row-gap: 24px;
     column-gap: 20px;
+  }
+
+  .listItem {
+    width: 240px;
+    height: 244px;
+  }
+
+  .listItem img {
+    height: 168px;
+  }
+
+  .descrWrapper h3 {
+    max-width: 208px;
+    overflow: hidden;
+    height: 31px;
   }
 }

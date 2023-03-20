@@ -1,5 +1,6 @@
 .characterWrapper {
   padding: 24px;
+  padding-bottom: 85px;
 }
 
 .link {
@@ -17,20 +18,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 30px;
 }
 
 .img {
   width: 160px;
-  height: auto;
+  height: 160px;
   border-radius: 50%;
   border: 5px solid #f2f2f7;
+  margin-bottom: 35px;
 }
 
 .name {
   font-weight: 400;
   font-size: 30px;
   text-align: center;
+  margin-bottom: 35px;
 }
 
 .info {
@@ -68,4 +70,25 @@
   line-height: 20px;
   letter-spacing: 0.25px;
   color: #6e798c;
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    width: 413px;
+  }
+
+  .img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 16px;
+  }
+
+  .infoTitle {
+    margin-bottom: 48px;
+  }
+
+  .infoTitle {
+    margin-bottom: 48px;
+    text-align: center;
+  }
 }

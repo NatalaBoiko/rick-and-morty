@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <>
-      <h1 className={s.notFound}>
-        Something went wrong ... <span>&#128526;</span>
-      </h1>
+    <div className={s.notFoundPage}>
       <Link className={s.link} to="/">
         <svg
           width="16"
@@ -22,7 +19,11 @@ const NotFound = () => {
         </svg>
         GO BACK
       </Link>
-    </>
+
+      <h1 className={s.notFound}>
+        Something went wrong ... <span>&#128526;</span>
+      </h1>
+    </div>
   );
 };
 

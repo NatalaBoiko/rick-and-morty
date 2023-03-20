@@ -1,10 +1,9 @@
-// import { Link } from "react-router-dom";
 import s from "./Home.module.css";
 
 import Title from "../../images/Title.png";
 import Filter from "../../components/Filter/Filter";
 import CaractersList from "../../components/CaractersList/CaractersList";
-import Button from "../../components/Button/Button";
+import BattonsList from "../../components/BattonsList/BattonsList";
 
 import { useState, useEffect } from "react";
 
@@ -60,8 +59,8 @@ const Home = () => {
         setNext(data.info.next);
       } catch (error) {
         console.log(error);
-        alert(`${filter.toUpperCase()} isn't exist`);
-        // setFilter("");
+        // alert(`${filter.toUpperCase()} isn't exist`);
+        setFilter(filter);
       } finally {
         setIsLoading(false);
       }
@@ -105,24 +104,12 @@ const Home = () => {
       {isLoading && <p>Loading...</p>}
       <CaractersList items={items} />
 
-      {page > 1 && (
-        <Button
-          onClick={loadLess}
-          title={page - 1}
-          type="button"
-          className="load-more"
-        />
-      )}
-
-      {next && (
-        <Button
-          onClick={loadMore}
-          // title="Load more"
-          title={page + 1}
-          type="button"
-          className="load-more"
-        />
-      )}
+      <BattonsList
+        loadLess={loadLess}
+        loadMore={loadMore}
+        page={page}
+        next={next}
+      />
     </div>
   );
 };

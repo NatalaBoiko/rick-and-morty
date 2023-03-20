@@ -16,7 +16,7 @@ form {
 }
 
 .filter {
-  width: 100%;
+  width: inherit;
   border: none;
   outline: none;
   color: gray;
@@ -28,6 +28,7 @@ form {
   letter-spacing: 0em;
   text-align: left;
 }
+
 .warning {
   color: red;
 }

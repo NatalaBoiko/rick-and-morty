@@ -8,7 +8,7 @@ const CaractersList = ({ items }) => {
 
   const characters = sortedItems.map(({ id, name, image, species }) => (
     <li key={id} className={s.listItem}>
-      <Link to={`/${id}`}>
+      <Link className={s.listItemLink} to={`/${id}`}>
         <img src={image} alt={name} />
         <div className={s.descrWrapper}>
           <h3>{name}</h3>
