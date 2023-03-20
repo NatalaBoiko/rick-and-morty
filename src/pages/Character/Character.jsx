@@ -7,6 +7,7 @@ import { fetchById } from "../../data/characters";
 const Character = () => {
   const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [origin, setOrigin] = useState("");
 
   const { id } = useParams();
 
@@ -18,6 +19,7 @@ const Character = () => {
         const data = await fetchById(id);
         console.log(data);
         setItem(data);
+        setOrigin(data.origin.name);
       } catch (error) {
         console.log(error);
       } finally {
@@ -28,7 +30,8 @@ const Character = () => {
     getById(id);
   }, [id]);
 
-  const { name, image, gender, status, species, origin, type } = item;
+  const { name, image, gender, status, species, type } = item;
+
   return (
     <div className={s.characterWrapper}>
       <Link className={s.link} to="/">
@@ -54,24 +57,24 @@ const Character = () => {
         <h1 className={s.name}>{name}</h1>
         <div className={s.info}>
           <h2 className={s.infoTitle}>Informations</h2>
-          <ul>
-            <li>
+          <ul className={s.infoList}>
+            <li className={s.infoListItem}>
               <h3>Gender</h3>
               <p>{gender}</p>
             </li>
-            <li>
+            <li className={s.infoListItem}>
               <h3>Status</h3>
               <p>{status}</p>
             </li>
-            <li>
+            <li className={s.infoListItem}>
               <h3>Specie</h3>
               <p>{species}</p>
             </li>
-            <li>
+            <li className={s.infoListItem}>
               <h3>Origin</h3>
-              <p>{[origin].name}</p>
+              <p>{origin}</p>
             </li>
-            <li>
+            <li className={s.infoListItem}>
               <h3>Type</h3>
               <p>{type}</p>
             </li>
