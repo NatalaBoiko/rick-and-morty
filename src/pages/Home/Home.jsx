@@ -59,8 +59,8 @@ const Home = () => {
         setNext(data.info.next);
       } catch (error) {
         console.log(error);
-        // alert(`${filter.toUpperCase()} isn't exist`);
-        setFilter(filter);
+        alert(`${filter.toUpperCase()} isn't exist`);
+        // setFilter("");
       } finally {
         setIsLoading(false);
       }

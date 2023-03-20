@@ -1,18 +1,16 @@
 import "./App.css";
-// import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-// import { Suspense, lazy } from "react";
+
+import { lazy } from "react";
 
 import "./App.css";
-// import Menu from "./pages/Menu/Menu";
 
-import Home from "./pages/Home/Home";
+// import Home from "./pages/Home/Home";
 import Character from "./pages/Character/Character";
-// import List from "./pages/List/List";
 import NotFound from "./pages/NotFound/NotFound";
 
-// const Home = lazy(() => import("./pages/Home/Home"));
-// const Character = lazy(() => import("./pages/Character/Characte"));
+const Home = lazy(() => import("./pages/Home/Home"));
+// const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 function App() {
   return (
