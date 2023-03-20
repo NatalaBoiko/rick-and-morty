@@ -1,0 +1,51 @@
+.characterWrapper {
+  padding: 24px;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  margin-bottom: 77px;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+}
+
+.img {
+  width: 160px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #f2f2f7;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  width: 312px;
+}
+
+.infoTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #8e8e93;
+  margin-bottom: 16px;
+}

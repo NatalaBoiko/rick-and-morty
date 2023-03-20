@@ -1,0 +1,14 @@
+.notFound {
+  text-align: center;
+  margin-top: 25vh;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}

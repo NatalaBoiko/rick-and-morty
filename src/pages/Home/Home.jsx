@@ -35,14 +35,13 @@ const Home = () => {
 
   useEffect(() => {
     const getCharacters = async (page) => {
+      setIsLoading(true);
       try {
-        setIsLoading(true);
         const data = await fetchCaracters(page);
         console.log(data);
         const sortedItems = sortItems(data.results);
         setItems([...sortedItems]);
         setNext(data.info.next);
-        setIsLoading(false);
       } catch (error) {
         console.log(error);
       } finally {
@@ -51,8 +50,8 @@ const Home = () => {
     };
 
     const getNames = async (page, filter) => {
+      setIsLoading(true);
       try {
-        setIsLoading(true);
         const data = await fetchNames(page, filter);
         console.log(data);
 
@@ -96,7 +95,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className={s.home}>
       <img className={s.title} src={Title} alt="Title" />
       <Filter
         filter={filter}
@@ -124,7 +123,7 @@ const Home = () => {
           className="load-more"
         />
       )}
-    </>
+    </div>
   );
 };
 

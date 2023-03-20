@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // import { Suspense, lazy } from "react";
 
 import "./App.css";
-import Menu from "./pages/Menu/Menu";
+// import Menu from "./pages/Menu/Menu";
 
 import Home from "./pages/Home/Home";
 import Character from "./pages/Character/Character";
@@ -17,7 +17,7 @@ import NotFound from "./pages/NotFound/NotFound";
 function App() {
   return (
     <div className="app">
-      <Menu />
+      {/* <Menu /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Character />} />
