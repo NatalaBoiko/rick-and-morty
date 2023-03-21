@@ -1,7 +1,14 @@
 import s from "./BattonsList.module.css";
 import Button from "../../components/Button/Button";
 
-const BattonsList = ({ loadLess, loadMore, page, next }) => {
+const BattonsList = ({ setPage, page, next }) => {
+  const loadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  const loadLess = () => {
+    setPage((prevPage) => prevPage - 1);
+  };
   return (
     <div className={s.btnsList}>
       {page > 1 && (

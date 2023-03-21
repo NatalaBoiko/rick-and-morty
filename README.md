@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Google login
+
+project name: TestLogin
+Project ID: testlogin-381313
+test gmail: kapusta33131@gmail.com
+test gmail password: kp313639
+
+Web client 1
+client id: 1001921375002-asdkq7olffq1k3k319d6ee9lltk1nddn.apps.googleusercontent.com
+client secret: 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
+
+'
+Kostiantyn Yemets
+7 місяців тому (змінено)
+Who got the "google is not defined" error.
+There is a solution! Just add "const google =window.google;"
+to the useEffect before the "google.accounts.id.initialize" line or simply in the App function'

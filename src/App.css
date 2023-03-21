@@ -6,3 +6,9 @@
   padding: 92px 24px 223px;
   row-gap: 32px;
 } */
+.title {
+  max-width: 600px;
+}
+.userImg {
+  width: 50px;
+}

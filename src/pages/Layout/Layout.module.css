@@ -1,0 +1,17 @@
+.nav {
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+}
+
+.navLink {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}

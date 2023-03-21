@@ -1,8 +1,18 @@
 import s from "./Filter.module.css";
 
-const Filter = ({ filter, onChange, onSubmit }) => {
+const Filter = ({ filter, setFilter, setPage }) => {
+  const handleCangeFilter = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    setFilter("");
+    setPage(1);
+  };
+
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmitForm}>
       <button type="submit" className={s.filterBnt}>
         {!filter ? (
           <svg
@@ -35,7 +45,7 @@ const Filter = ({ filter, onChange, onSubmit }) => {
       <input
         name="filter"
         value={filter}
-        onChange={onChange}
+        onChange={handleCangeFilter}
         className={s.filter}
         type="text"
         placeholder="Filter by name..."

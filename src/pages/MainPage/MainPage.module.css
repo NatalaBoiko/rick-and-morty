@@ -1,0 +1,12 @@
+.mainContainer {
+  padding: 130px 24px;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .title {
+  max-width: 600px;
+} */
