@@ -24,8 +24,14 @@ const CaractersList = ({ items }) => {
 CaractersList.defaultProps = {
   items: [],
 };
+
 CaractersList.propTypes = {
-  item: PropTypes.array,
+  items: PropTypes.arrayOf(PropTypes.object),
+  item: PropTypes.object,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  species: PropTypes.string,
 };
 
 export default CaractersList;

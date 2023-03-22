@@ -17,6 +17,7 @@
 
 .logOut {
   border: none;
+  cursor: pointer;
 }
 
 .userImg {

@@ -42,6 +42,8 @@ const Layout = () => {
     google.accounts.id.prompt();
   }, [user]);
 
+  console.log(user.picture);
+
   return (
     <div className={s.layout}>
       <header className={s.nav}>

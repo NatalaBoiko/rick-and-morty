@@ -1,4 +1,6 @@
 import s from "./BattonsList.module.css";
+import PropTypes from "prop-types";
+
 import Button from "../../components/Button/Button";
 
 const BattonsList = ({ setPage, page, next }) => {
@@ -20,6 +22,15 @@ const BattonsList = ({ setPage, page, next }) => {
         />
       )}
 
+      {page && (
+        <Button
+          // onClick={loadLess}
+          title={page}
+          type="button"
+          className={s.currentBtn}
+        />
+      )}
+
       {next && (
         <Button
           onClick={loadMore}
@@ -30,6 +41,12 @@ const BattonsList = ({ setPage, page, next }) => {
       )}
     </div>
   );
+};
+
+BattonsList.propTypes = {
+  setPage: PropTypes.func,
+  page: PropTypes.number,
+  next: PropTypes.string,
 };
 
 export default BattonsList;

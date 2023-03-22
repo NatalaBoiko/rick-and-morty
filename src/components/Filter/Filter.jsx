@@ -1,4 +1,5 @@
 import s from "./Filter.module.css";
+import PropTypes from "prop-types";
 
 const Filter = ({ filter, setFilter, setPage }) => {
   const handleCangeFilter = (e) => {
@@ -53,5 +54,11 @@ const Filter = ({ filter, setFilter, setPage }) => {
     </form>
   );
 };
+// filter, setFilter, setPage
 
+Filter.propTypes = {
+  filter: PropTypes.string,
+  setFilter: PropTypes.func,
+  setPage: PropTypes.func,
+};
 export default Filter;
