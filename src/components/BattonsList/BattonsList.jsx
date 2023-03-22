@@ -23,7 +23,6 @@ const BattonsList = ({ setPage, page, next }) => {
       {next && (
         <Button
           onClick={loadMore}
-          // title="Load more"
           title={page + 1}
           type="button"
           className={s.loadBtn}

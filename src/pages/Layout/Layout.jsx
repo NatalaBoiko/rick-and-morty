@@ -5,21 +5,22 @@ import { Outlet } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 const Layout = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(() => {
+    const initialValue = JSON.parse(localStorage.getItem("user"));
+    return initialValue || {};
+  });
   console.log(user);
 
   function handleCallbakResponse(response) {
     console.log(response);
     console.log("Encoded JWT token:" + response.credential);
     const userObject = jwt_decode(response.credential);
-    console.log(userObject);
+    // console.log(userObject);
     setUser(userObject);
-    document.getElementById("signInDiv").hidden = true;
   }
 
   const handleSignOut = () => {
     setUser({});
-    document.getElementById("signInDiv").hidden = false;
   };
 
   useEffect(() => {
@@ -34,12 +35,14 @@ const Layout = () => {
       theme: "outline",
       size: "medium",
     });
+
+    localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
 
   return (
     <div className={s.layout}>
       <header className={s.nav}>
-        <div id="signInDiv"></div>
+        {Object.keys(user).length === 0 && <div id="signInDiv"></div>}
 
         {user && (
           <div>
@@ -48,7 +51,7 @@ const Layout = () => {
           </div>
         )}
 
-        {Object.keys(user).length != 0 && (
+        {Object.keys(user).length !== 0 && (
           <div className={s.logOut} id="logOut" onClick={handleSignOut}>
             Sign out
           </div>
