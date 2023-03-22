@@ -7,22 +7,19 @@ import jwt_decode from "jwt-decode";
 const Layout = () => {
   const [user, setUser] = useState({});
   console.log(user);
-  console.log(user);
 
   function handleCallbakResponse(response) {
     console.log(response);
     console.log("Encoded JWT token:" + response.credential);
-    const token = jwt_decode(response.credential);
-    console.log(token);
-    setUser(token);
+    const userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
-    document.getElementById("logOut").hidden = false;
   }
 
   const handleSignOut = () => {
     setUser({});
     document.getElementById("signInDiv").hidden = false;
-    document.getElementById("logOut").hidden = true;
   };
 
   useEffect(() => {
@@ -35,7 +32,7 @@ const Layout = () => {
 
     google.accounts.id.renderButton(document.getElementById("signInDiv"), {
       theme: "outline",
-      size: "large",
+      size: "medium",
     });
   }, [user]);
 
@@ -48,9 +45,12 @@ const Layout = () => {
           <div>
             <img className={s.userImg} src={user.picture} alt={user.name} />
             <h3>{user.name}</h3>
-            <div className={s.logOut} id="logOut" onClick={handleSignOut}>
-              Sign out
-            </div>
+          </div>
+        )}
+
+        {Object.keys(user).length != 0 && (
+          <div className={s.logOut} id="logOut" onClick={handleSignOut}>
+            Sign out
           </div>
         )}
       </header>

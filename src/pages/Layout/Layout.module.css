@@ -5,8 +5,7 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
-  column-gap: 30px;
+  justify-content: space-between;
 }
 
 .navLink {
@@ -21,5 +20,5 @@
 }
 
 .userImg {
-  width: 50px;
+  width: 35px;
 }
