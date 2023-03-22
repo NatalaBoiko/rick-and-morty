@@ -12,10 +12,12 @@ const Layout = () => {
   console.log(user);
 
   function handleCallbakResponse(response) {
+    if (Object.keys(user).length !== 0) {
+      return;
+    }
     console.log(response);
     console.log("Encoded JWT token:" + response.credential);
     const userObject = jwt_decode(response.credential);
-    // console.log(userObject);
     setUser(userObject);
   }
 
@@ -37,6 +39,7 @@ const Layout = () => {
     });
 
     localStorage.setItem("user", JSON.stringify(user));
+    google.accounts.id.prompt();
   }, [user]);
 
   return (
