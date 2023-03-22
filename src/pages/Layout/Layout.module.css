@@ -1,7 +1,7 @@
 .nav {
   padding: 24px;
   background-color: rgba(0, 0, 0, 0.1);
-  position: fixed;
+  /* position: fixed; */
   width: 100vw;
   display: flex;
   align-items: center;
@@ -14,4 +14,12 @@
   font-weight: 700;
   color: white;
   text-decoration: none;
+}
+
+.logOut {
+  border: none;
+}
+
+.userImg {
+  width: 50px;
 }

@@ -1,5 +1,6 @@
 .menu {
-  height: 500px;
+  /* height: 500px; */
   width: 100vw;
   background-color: aqua;
+  padding: 24px;
 }

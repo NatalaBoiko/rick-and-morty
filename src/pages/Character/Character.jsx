@@ -34,7 +34,7 @@ const Character = () => {
 
   return (
     <div className={s.characterWrapper}>
-      <Link className={s.link} to="/home">
+      <Link className={s.link} to="/">
         <svg
           width="16"
           height="16"

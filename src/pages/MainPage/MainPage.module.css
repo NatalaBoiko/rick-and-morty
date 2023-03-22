@@ -1,5 +1,5 @@
 .mainContainer {
-  padding: 130px 24px;
+  padding: 92px 24px 130px;
   min-height: 100vh;
 
   display: flex;
@@ -7,6 +7,8 @@
   align-items: center;
 }
 
-/* .title {
-  max-width: 600px;
-} */
+@media screen and (min-width: 768px) {
+  .mainContainer {
+    padding-bottom: 86px;
+  }
+}
