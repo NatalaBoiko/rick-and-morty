@@ -1,7 +1,7 @@
 import s from "./Filter.module.css";
 import PropTypes from "prop-types";
 
-const Filter = ({ filter, setFilter, setPage }) => {
+const Filter = ({ filter, setFilter, setPage, isValid }) => {
   const handleCangeFilter = (e) => {
     setFilter(e.target.value);
   };
@@ -13,7 +13,10 @@ const Filter = ({ filter, setFilter, setPage }) => {
   };
 
   return (
-    <form onSubmit={handleSubmitForm}>
+    <form
+      onSubmit={handleSubmitForm}
+      className={`${s.form}  ${!isValid && s.red}`}
+    >
       <button type="submit" className={s.filterBnt}>
         {!filter ? (
           <svg
@@ -47,14 +50,13 @@ const Filter = ({ filter, setFilter, setPage }) => {
         name="filter"
         value={filter}
         onChange={handleCangeFilter}
-        className={s.filter}
+        className={`${s.filter}`}
         type="text"
         placeholder="Filter by name..."
       />
     </form>
   );
 };
-// filter, setFilter, setPage
 
 Filter.propTypes = {
   filter: PropTypes.string,

@@ -28,6 +28,7 @@ const Home = () => {
 
   const [next, setNext] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     const getCharacters = async (page) => {
@@ -54,9 +55,11 @@ const Home = () => {
         const sortedItems = sortItems(data.results);
         setItems([...sortedItems]);
         setNext(data.info.next);
+        setIsValid(true);
       } catch (error) {
         console.log(error);
         myToast(`${filter.toUpperCase()} isn't exist`);
+        setIsValid(false);
       } finally {
         setIsLoading(false);
       }
@@ -74,7 +77,12 @@ const Home = () => {
   return (
     <div className={s.home}>
       <img className={s.title} src={Title} alt="Title" />
-      <Filter filter={filter} setFilter={setFilter} setPage={setPage} />
+      <Filter
+        filter={filter}
+        setFilter={setFilter}
+        setPage={setPage}
+        isValid={isValid}
+      />
       {isLoading && <p>Loading...</p>}
       <CaractersList items={items} />
       <BattonsList setPage={setPage} page={page} next={next} />
