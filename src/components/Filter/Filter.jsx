@@ -62,5 +62,6 @@ Filter.propTypes = {
   filter: PropTypes.string,
   setFilter: PropTypes.func,
   setPage: PropTypes.func,
+  isValid: PropTypes.bool,
 };
 export default Filter;
